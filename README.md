@@ -2,19 +2,8 @@ Deploy and configure network load balancer
 
 Doc: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
 
-Questions:
 
-Do the below exercice and use a Load Balancer service type.
-
-1. Create a deployment with the latest nginx image and two replicas.
-2. Expose it's port 80 through a service of type NodePort.
-3. Show all elements, including the endpoints.
-4. Get the nginx index page through the NodePort.
-
-Hint: If you are not running your cluster on a cloud providing a load balancer service, you can use MetalLB
-
-Solution
-# We will deploy MetalLB first to provide Load Balancer service type
+# Deploy metalLb
 ## You have to enable strict ARP mode
 ```bash
 kubectl edit configmap -n kube-system kube-proxy
