@@ -58,28 +58,6 @@ kubectl scale deployment nginx-lb --replicas=2
 kubectl expose deployment nginx-lb --port=80 --target-port=80 --type=LoadBalancer
 kubectl describe svc nginx-lb
 ```
-Name:                     nginx-lb
-Namespace:                default
-Labels:                   app=nginx-lb
-Annotations:              <none>
-Selector:                 app=nginx-lb
-Type:                     LoadBalancer
-IP Family Policy:         SingleStack
-IP Families:              IPv4
-IP:                       10.104.174.166
-IPs:                      10.104.174.166
-LoadBalancer Ingress:     172.16.1.101
-Port:                     <unset>  80/TCP
-TargetPort:               80/TCP
-NodePort:                 <unset>  31264/TCP
-Endpoints:                10.244.1.17:80,10.244.2.17:80
-Session Affinity:         None
-External Traffic Policy:  Cluster
-Events:
-  Type    Reason        Age   From                Message
-  ----    ------        ----  ----                -------
-  Normal  IPAllocated   27s   metallb-controller  Assigned IP ["172.16.1.101"]
-  Normal  nodeAssigned  27s   metallb-speaker     announcing from node "k8s-node-1" with protocol "layer2"
 
 # We are getting the page through the IP address allocated by MetalLB from the pool we provided
 ```bash
